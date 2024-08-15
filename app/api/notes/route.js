@@ -2,7 +2,7 @@ import { query } from '@/utils/database';
 import { nanoid } from 'nanoid';
 import { NextResponse } from 'next/server';
 
-export const POST = async (req, res) => {
+export const POST = async (req) => {
   const { title, body } = await req.json();
   const createdAt = new Date();
   const id = `note-${nanoid(16)}`;
@@ -18,7 +18,7 @@ export const POST = async (req, res) => {
   }, { status: 201 });
 };
 
-export const GET = async (req, res) => {
+export const GET = async () => {
   const notes = await query('SELECT * FROM notes');
   return NextResponse.json(notes.rows, { status: 200 });
 };
