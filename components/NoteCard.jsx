@@ -22,12 +22,12 @@ const NoteCard = ({ notes }) => {
   return (
     <>
       {notes.map((note) => (
-        <Card key={note.id} height="200px">
+        <Card key={note.id}>
           <CardHeader>
             <Heading size="sm">{note.title}</Heading>
           </CardHeader>
           <CardBody>
-            <Text>{note.body}</Text>
+            <Text noOfLines={[5, 6, 7]}>{note.body}</Text>
           </CardBody>
           <CardFooter>
             <Button onClick={() => handleDetailClick(note)}>

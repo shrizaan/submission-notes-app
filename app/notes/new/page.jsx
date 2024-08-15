@@ -50,7 +50,15 @@ const AddNotePage = () => {
   };
 
   return (
-    <Box p={4} w="50%" mt="40" mx="auto">
+    <Box
+      p={4}
+      w={{
+        base: '100%',
+        md: '50%', 
+      }}
+      mt="40"
+      mx="auto"
+    >
       <form onSubmit={handleSubmit}>
         <FormControl isRequired mb={4}>
           <FormLabel>Title</FormLabel>

@@ -1,16 +1,16 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 import {
   Box,
+  Button,
   FormControl,
   FormLabel,
-  Button,
   Input,
-  Textarea,
   Stack,
+  Textarea,
 } from '@chakra-ui/react';
 
 const EditNotePage = ({ params }) => {
@@ -60,7 +60,15 @@ const EditNotePage = ({ params }) => {
   };
 
   return (
-    <Box p={4} w="50%" mt="40" mx="auto">
+    <Box
+      p={4}
+      w={{
+        base: '100%',
+        md: '50%',
+      }}
+      mt="40"
+      mx="auto"
+    >
       <form onSubmit={handleSubmit}>
         <FormControl isRequired mb={4}>
           <FormLabel>Title</FormLabel>

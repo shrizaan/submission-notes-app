@@ -58,15 +58,36 @@ const DetailNotePage = ({ params }) => {
   });
 
   return (
-    <Box>
-      <Flex direction="column" height="50vh" mx="52" mt="32">
-        <Heading as="h1" size="3xl" mb="6">
+    <Box id="notes-id-page">
+      <Flex
+        direction="column"
+        mx={{
+          base: '4',
+          md: '40',
+        }}
+        mt="32"
+      >
+        <Heading
+          as="h1"
+          size={{
+            base: 'xl',
+            md: '2xl',
+          }}
+          mb="6"
+        >
           {note.title}
         </Heading>
         <Text fontSize="sm" mb="6">
           Diubah pada tanggal: {formattedDate}
         </Text>
-        <Text fontSize="lg" mb="8">
+        <Text
+          as="pre"
+          fontSize="lg"
+          whiteSpace="pre-wrap"
+          wordBreak="break-word"
+          fontFamily="inter"
+          mb="8"
+        >
           {note.body}
         </Text>
         {confirmDelete ? (
